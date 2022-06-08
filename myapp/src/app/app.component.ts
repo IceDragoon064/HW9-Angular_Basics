@@ -11,7 +11,8 @@ export class PlayingCard{
     <h1>Hello world {{title}}
     <br>
     {{card.cardVal}} of {{card.suit}}.
-    {{card1.cardVal}} of {{card1.suit}}
+    <br>
+    {{card1.cardVal}} of {{card1.suit}}.
     </h1>
     Card: <input [(ngModel)]="card.cardVal">`,
   styleUrls: ['./app.component.css']
@@ -26,6 +27,7 @@ export class AppComponent {
 
   card1: PlayingCard = {
     cardVal: "Queen",
-    suit: "Diamonds"
-    };
+    suit: "Diamond"
+  };
+
 }
