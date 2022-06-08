@@ -8,12 +8,29 @@ export class PlayingCard{
 @Component({
   selector: 'app-root',
   template: `
-<ul *ngFor="let item of firstNames; let i = index">
-<li>{{"Item"+ i+":"+item}}</li>
-</ul>
+    <input [(ngModel)]="myinput">
+    <input type='button' (click)=doSomething(myinput)>
+    {{myoutput}}
+  <br>
+    <input [(ngModel)]="myinput1">
+    <input type='button' (click)=doSomething1(myinput1)>
+    {{myoutput1}}
     `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  firstNames = ['abe', 'amy', 'al'];s
+  myinput = '';
+  myoutput = '';
+  myinput1 = '';
+  myoutput1 = '';
+
+  doSomething(someContent){
+      alert(someContent);
+      this.myoutput = someContent;
+  }
+
+  doSomething1(someContent1){
+    alert(someContent1);
+    this.myoutput1 = someContent1;
+}
 }
