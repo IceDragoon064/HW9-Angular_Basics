@@ -10,24 +10,25 @@ export class PlayingCard{
   template: `
     <h1>Hello world {{title}}
     <br>
-    {{card.cardVal}} of {{card.suit}}.
-    <br>
-    {{card1.cardVal}} of {{card1.suit}}.
+    <!-- Show cards in unordered list. -->
+    <table>
+      <tr *ngFor="let card of cards">
+      <td> <ul> <li> {{card.cardVal}} </li> </ul> </td>
+      <td> <ul> <li> {{card.suit}} </li> </ul> </td>
+      </tr>
+    </table>
     </h1>
-    Card: <input [(ngModel)]="card.cardVal">`,
+    `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'This is Angular';
 
-  card: PlayingCard = {
-    cardVal: "Ace",
-    suit: "Spades"
-  };
+  cards: PlayingCard[] = [
+    { cardVal: "Ace", suit: "Spades" },
+    { cardVal: "Two", suit: "Clubs" },
+    { cardVal: "Six", suit: "Hearts" },
+];
 
-  card1: PlayingCard = {
-    cardVal: "Queen",
-    suit: "Diamond"
-  };
 
 }
