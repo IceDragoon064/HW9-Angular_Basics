@@ -8,27 +8,12 @@ export class PlayingCard{
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Hello world {{title}}
-    <br>
-    <!-- Show cards in unordered list. -->
-    <table>
-      <tr *ngFor="let card of cards">
-      <td> <ul> <li> {{card.cardVal}} </li> </ul> </td>
-      <td> <ul> <li> {{card.suit}} </li> </ul> </td>
-      </tr>
-    </table>
-    </h1>
+<ul *ngFor="let item of firstNames; let i = index">
+<li>{{"Item"+ i+":"+item}}</li>
+</ul>
     `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'This is Angular';
-
-  cards: PlayingCard[] = [
-    { cardVal: "Ace", suit: "Spades" },
-    { cardVal: "Two", suit: "Clubs" },
-    { cardVal: "Six", suit: "Hearts" },
-];
-
-
+  firstNames = ['abe', 'amy', 'al'];s
 }
